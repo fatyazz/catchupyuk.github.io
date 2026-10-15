@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATCH UP YUK! - Platform Informasi Mahasiswa</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C2007B', /* Magenta khas logo CATCH UP YUK! */
+                        primaryDark: '#990061',
+                        primaryLight: '#E61A9C',
+                        primaryBg: '#FDF2F8',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Inter & Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#about" class="flex items-center space-x-3 group">
+                <!-- FOTO/LOGO DI SAMPING TULISAN CATCH UP YUK -->
+                <div class="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center bg-primary/5 overflow-hidden shadow-sm group-hover:scale-105 transition-transform">
+                    <img src="Logo.png" alt="Logo Catch Up Yuk" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">CATCH UP YUK!</span>
+                    <span class="text-xs font-semibold text-primary tracking-wide uppercase">Bertumbuh dimulai dari sini</span>
+                </div>
+            </a>
+            
+            <!-- NAVIGASI UTAMA -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#about" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">About Catch Up Yuk</a>
+                <a href="#beasiswa" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">Info Beasiswa</a>
+                <a href="#lomba" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">Info Lomba</a>
+                <a href="#volunteer" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">Info Volunteer</a>
+                <a href="#webinar" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">Info Webinar</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <a href="#subscribe-section" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold text-white bg-primary rounded-xl hover:bg-primaryDark transition-all shadow-md shadow-primary/20">
+                    Kirim ke Email
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-primary focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-primaryBg hover:text-primary">About Catch Up Yuk</a>
+            <a href="#beasiswa" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-primaryBg hover:text-primary">Info Beasiswa</a>
+            <a href="#lomba" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-primaryBg hover:text-primary">Info Lomba</a>
+            <a href="#volunteer" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-primaryBg hover:text-primary">Info Volunteer</a>
+            <a href="#webinar" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-primaryBg hover:text-primary">Info Webinar</a>
+            <a href="#subscribe-section" class="block px-3 py-2 rounded-lg text-base font-semibold text-primary bg-primaryBg">Kirim ke Email</a>
+        </div>
+    </header>
+
+    <!-- 1. SECTION: ABOUT CATCH UP YUK -->
+    <section id="about" class="py-16 sm:py-24 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wide uppercase">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        <span>Platform Distribusi Terkoordinasi</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Tentang <span class="text-primary">CATCH UP YUK!</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                        <strong>CATCH UP YUK!</strong> adalah platform distribusi informasi akademik dan pengembangan diri yang dirancang khusus untuk memastikan peluang seperti <strong>beasiswa, lomba, kegiatan volunteer, dan webinar</strong> dapat menjangkau seluruh kelompok mahasiswa secara merata, cepat, dan terverifikasi.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-500 leading-relaxed">
+                        Dikembangkan secara terkoordinasi oleh tim, CATCH UP YUK! tidak hanya mengumpulkan informasi, tetapi juga fokus pada kecepatan dan pemerataan distribusi agar tidak ada mahasiswa UINSU yang tertinggal batas pendaftaran.
+                    </p>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="bg-gradient-to-br from-primaryBg to-white p-8 rounded-3xl border border-primary/20 shadow-xl w-full max-w-md text-center">
+                        
+                        <!-- PENAMBAHAN LOGO SDGs KE-4 DI SINI -->
+                        <div class="w-24 h-24 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mx-auto mb-4 shadow-md p-2 overflow-hidden">
+                            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg" alt="Logo SDG 4 Pendidikan Berkualitas" class="w-full h-full object-contain">
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900">SDG 4 Alignment</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Mendukung Tujuan Pembangunan Berkelanjutan Ke-4 (Pendidikan Berkualitas) dari PBB melalui dorongan akses pendidikan yang inklusif dan merata.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EMPAT KOMPONEN INTI -->
+            <div class="pt-8">
+                <h2 class="text-2xl font-bold text-slate-900 mb-8">Empat komponen inti</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:border-primary/50 transition-all hover:shadow-md">
+                        <div class="text-primary mb-4"><i data-lucide="network" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Jaringan penghubung</h3>
+                        <p class="text-sm text-slate-500">Fakultas dan program studi</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:border-primary/50 transition-all hover:shadow-md">
+                        <div class="text-primary mb-4"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Verifikasi sumber</h3>
+                        <p class="text-sm text-slate-500">Pemeriksaan informasi resmi</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:border-primary/50 transition-all hover:shadow-md">
+                        <div class="text-primary mb-4"><i data-lucide="clock" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Pencatatan waktu</h3>
+                        <p class="text-sm text-slate-500">Jejak distribusi informasi</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:border-primary/50 transition-all hover:shadow-md">
+                        <div class="text-primary mb-4"><i data-lucide="trending-up" class="w-8 h-8"></i></div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Pemantauan jangkauan</h3>
+                        <p class="text-sm text-slate-500">Kelompok sasaran yang menerima informasi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH & GLOBAL FILTER -->
+    <div class="bg-slate-100 py-6 border-b border-slate-200 sticky top-20 z-40 shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row gap-4 items-center justify-between">
+                <div class="relative w-full sm:w-96">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
+                    <input type="text" id="global-search" oninput="filterAllSections()" placeholder="Cari informasi beasiswa, lomba, webinar..." class="w-full pl-11 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div class="flex items-center space-x-2 text-xs font-semibold text-slate-500 w-full sm:w-auto justify-end">
+                    <span>Status:</span>
+                    <button onclick="setStatusFilter('all')" id="btn-stat-all" class="px-3 py-1.5 rounded-lg bg-primary text-white">Semua</button>
+                    <button onclick="setStatusFilter('Terverifikasi')" id="btn-stat-verif" class="px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50">Terverifikasi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. SECTION: INFO BEASISWA -->
+    <section id="beasiswa" class="py-16 bg-slate-50 border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Peluang Studi</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Info Beasiswa</h2>
+                </div>
+                <span class="text-xs font-semibold text-slate-500" id="beasiswa-count">3 Informasi</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="beasiswa-container"></div>
+        </div>
+    </section>
+
+    <!-- 3. SECTION: INFO LOMBA -->
+    <section id="lomba" class="py-16 bg-white border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Kompetisi & Prestasi</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Info Lomba</h2>
+                </div>
+                <span class="text-xs font-semibold text-slate-500" id="lomba-count">2 Informasi</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="lomba-container"></div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION: INFO VOLUNTEER -->
+    <section id="volunteer" class="py-16 bg-slate-50 border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Pengabdian & Komunitas</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Info Volunteer</h2>
+                </div>
+                <span class="text-xs font-semibold text-slate-500" id="volunteer-count">2 Informasi</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="volunteer-container"></div>
+        </div>
+    </section>
+
+    <!-- 5. SECTION: INFO WEBINAR -->
+    <section id="webinar" class="py-16 bg-white border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Seminar & Workshop</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Info Webinar</h2>
+                </div>
+                <span class="text-xs font-semibold text-slate-500" id="webinar-count">2 Informasi</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="webinar-container"></div>
+        </div>
+    </section>
+
+    <!-- SECTION KIRIM INFO KE EMAIL / LANGGANAN -->
+    <section id="subscribe-section" class="py-16 bg-primaryBg border-b border-primary/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-primary/30">
+                <i data-lucide="mail" class="w-8 h-8"></i>
+            </div>
+            <div class="space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Dapatkan Update Otomatis ke Email Anda</h2>
+                <p class="text-sm text-slate-600 max-w-xl mx-auto">
+                    Jangan ketinggalan informasi penting! Daftarkan email Anda untuk menerima ringkasan informasi beasiswa, lomba, volunteer, dan webinar terbaru langsung ke inbox Anda.
+                </p>
+            </div>
+            <form id="email-subscription-form" onsubmit="handleEmailSubscription(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto pt-2">
+                <input type="email" id="subscriber-email" required placeholder="Masukkan email aktif Anda..." class="flex-1 px-4 py-3 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
+                <button type="submit" class="px-6 py-3 bg-primary hover:bg-primaryDark text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow-md shadow-primary/20 flex items-center justify-center space-x-2">
+                    <span>Kirim Otomatis</span>
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </form>
+            <p class="text-[11px] text-slate-400">🔒 Kami menjaga kerahasiaan data Anda dan bebas dari spam.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between border-b border-slate-800 pb-8 mb-8 gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-black text-lg overflow-hidden">
+                        <img src="Logo2.png" alt="Footer Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <span class="text-lg font-extrabold tracking-tight block leading-none">CATCH UP YUK!</span>
+                        <span class="text-xs text-slate-400">Bertumbuh dimulai dari sini</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-slate-400">
+                    <a href="#about" class="hover:text-primary transition-colors">About</a>
+                    <a href="#beasiswa" class="hover:text-primary transition-colors">Beasiswa</a>
+                    <a href="#lomba" class="hover:text-primary transition-colors">Lomba</a>
+                    <a href="#volunteer" class="hover:text-primary transition-colors">Volunteer</a>
+                    <a href="#webinar" class="hover:text-primary transition-colors">Webinar</a>
+                </div>
+            </div>
+            <div class="text-center text-xs text-slate-500 font-medium">
+                © 2026 CATCH UP YUK! - Platform Distribusi Informasi
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DETAIL INFORMASI -->
+    <div id="info-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        const allData = [
+            {
+                id: 1,
+                type: 'beasiswa',
+                title: 'Beasiswa Unggulan Kemendikbudristek 2026',
+                organizer: 'Kementerian Pendidikan & Kebudayaan',
+                status: 'Terverifikasi',
+                deadline: '30 November 2026',
+                distTime: '15 Okt 2026, 08:30 WIB',
+                target: 'Seluruh Fakultas UINSU',
+                desc: 'Bantuan biaya pendidikan penuh dan biaya hidup bagi mahasiswa berprestasi.',
+                req: 'Mahasiswa aktif S1/S2, IPK min 3.25, Sertifikat Prestasi Nasional.'
+            },
+            {
+                id: 2,
+                type: 'beasiswa',
+                title: 'Beasiswa Bank Indonesia (BI) Sumut',
+                organizer: 'Bank Indonesia Kantor Wilayah Sumut',
+                status: 'Terverifikasi',
+                deadline: '15 Desember 2026',
+                distTime: '14 Okt 2026, 14:15 WIB',
+                target: 'Fakultas Ekonomi & FST',
+                desc: 'Dukungan finansial serta pelatihan kepemimpinan dalam komunitas GenBI.',
+                req: 'S1 Min Semester 3, IPK min 3.00, Aktif Organisasi.'
+            },
+            {
+                id: 3,
+                type: 'beasiswa',
+                title: 'Beasiswa Tahfidz & Prestasi UINSU',
+                organizer: 'UIN Sumatera Utara',
+                status: 'Perlu Konfirmasi',
+                deadline: '20 November 2026',
+                distTime: '15 Okt 2026, 09:00 WIB',
+                target: 'Seluruh Program Studi',
+                desc: 'Beasiswa khusus bagi mahasiswa penghafal Al-Quran minimal 5 Juz.',
+                req: 'Hafal Min 5 Juz, Surat Rekomendasi Dekan Fakultas.'
+            },
+            {
+                id: 4,
+                type: 'lomba',
+                title: 'National Digital Innovation Competition 2026',
+                organizer: 'Himpunan Mahasiswa FST UINSU',
+                status: 'Terverifikasi',
+                deadline: '10 November 2026',
+                distTime: '14 Okt 2026, 11:20 WIB',
+                target: 'Mahasiswa Se-Indonesia',
+                desc: 'Kompetisi karya tulis dan inovasi teknologi berbasis solusi kemasyarakatan.',
+                req: 'Tim 2-3 Mahasiswa, Mengirimkan Abstrak Karya Inovasi.'
+            },
+            {
+                id: 5,
+                type: 'lomba',
+                title: 'Kompetisi Debat Bahasa Inggris & Arab',
+                organizer: 'Pusat Bahasa UINSU',
+                status: 'Terverifikasi',
+                deadline: '05 November 2026',
+                distTime: '13 Okt 2026, 16:45 WIB',
+                target: 'Seluruh Fakultas',
+                desc: 'Ajang mengasah kemampuan berbahasa asing dan pemikiran kritis.',
+                req: 'Mahasiswa aktif, terdaftar dalam sistem akademik kampus.'
+            },
+            {
+                id: 6,
+                type: 'volunteer',
+                title: 'Program Mengajar Desa Pesisir Sumut',
+                organizer: 'Relawan Pendidikan Sumatera',
+                status: 'Terverifikasi',
+                deadline: '28 Oktober 2026',
+                distTime: '15 Okt 2026, 07:10 WIB',
+                target: 'Seluruh Mahasiswa UINSU',
+                desc: 'Pengabdian masyarakat dalam literasi anak-anak daerah pesisir.',
+                req: 'Komitmen 2 bulan, Menyukai dunia pendidikan anak.'
+            },
+            {
+                id: 7,
+                type: 'volunteer',
+                title: 'Panitia Green Campus Environment Campaign',
+                organizer: 'UKM Pecinta Alam UINSU',
+                status: 'Perlu Konfirmasi',
+                deadline: '01 November 2026',
+                distTime: '12 Okt 2026, 10:00 WIB',
+                target: 'Relawan Kampus',
+                desc: 'Aksi penanaman pohon dan pengelolaan sampah mandiri di area kampus.',
+                req: 'Mahasiswa aktif, bersedia mengikuti pembekalan singkat.'
+            },
+            {
+                id: 8,
+                type: 'webinar',
+                title: 'Webinar AI & Masa Depan Karir Digital',
+                organizer: 'Pusat Pengembangan Karir UINSU',
+                status: 'Terverifikasi',
+                deadline: '22 Oktober 2026',
+                distTime: '15 Okt 2026, 08:00 WIB',
+                target: 'Umum & Mahasiswa',
+                desc: 'Pemanfaatan AI secara bijak dan profesional untuk karir akademik.',
+                req: 'Gratis, Pendaftaran via form online terverifikasi.'
+            },
+            {
+                id: 9,
+                type: 'webinar',
+                title: 'Workshop Strategi Tembus Beasiswa Luar Negeri',
+                organizer: 'International Office UINSU',
+                status: 'Terverifikasi',
+                deadline: '25 Oktober 2026',
+                distTime: '14 Okt 2026, 13:00 WIB',
+                target: 'Mahasiswa Tingkat Akhir & Alumni',
+                desc: 'Bedah motivation letter dan trik wawancara beasiswa internasional.',
+                req: 'Terbuka untuk umum, e-sertifikat gratis.'
+            }
+        ];
+
+        let currentStatusFilter = 'all';
+
+        function createCardHtml(item) {
+            const isVerified = item.status === 'Terverifikasi';
+            const badgeClass = isVerified 
+                ? 'bg-emerald-100 text-emerald-800 border-emerald-200' 
+                : 'bg-amber-100 text-amber-800 border-amber-200';
+
+            return `
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${badgeClass}">
+                                ${item.status}
+                            </span>
+                            <span class="text-xs text-slate-400 font-medium flex items-center">
+                                <i data-lucide="clock" class="w-3 h-3 mr-1 text-primary"></i> ${item.distTime}
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-2">${item.title}</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3 flex items-center">
+                            <i data-lucide="building" class="w-3.5 h-3.5 mr-1.5 text-slate-400"></i> ${item.organizer}
+                        </p>
+                        <p class="text-xs text-slate-600 line-clamp-2 mb-4">${item.desc}</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 space-y-2">
+                        <div class="flex justify-between items-center text-xs text-slate-500">
+                            <span>Tenggat:</span>
+                            <span class="font-bold text-primary">${item.deadline}</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="openModal(${item.id})" class="flex-1 py-2 bg-slate-900 hover:bg-primary text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center space-x-1">
+                                <span>Detail</span>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="sendSingleInfoToEmail(${item.id})" title="Kirim info ini ke email" class="px-3 py-2 bg-primary/10 hover:bg-primary text-primary hover:text-white text-xs font-bold rounded-xl transition-colors flex items-center justify-center">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderSections(data) {
+            const categories = ['beasiswa', 'lomba', 'volunteer', 'webinar'];
+
+            categories.forEach(cat => {
+                const container = document.getElementById(`${cat}-container`);
+                const countEl = document.getElementById(`${cat}-count`);
+                const filtered = data.filter(item => item.type === cat);
+
+                if (filtered.length === 0) {
+                    container.innerHTML = `<p class="col-span-full text-center text-xs text-slate-400 py-8">Tidak ada informasi ${cat} yang sesuai filter.</p>`;
+                    countEl.textContent = '0 Informasi';
+                } else {
+                    container.innerHTML = filtered.map(item => createCardHtml(item)).join('');
+                    countEl.textContent = `${filtered.length} Informasi`;
+                }
+            });
+
+            lucide.createIcons();
+        }
+
+        function filterAllSections() {
+            const query = document.getElementById('global-search').value.toLowerCase();
+            const filtered = allData.filter(item => {
+                const matchesSearch = item.title.toLowerCase().includes(query) || item.organizer.toLowerCase().includes(query);
+                const matchesStatus = currentStatusFilter === 'all' || item.status === currentStatusFilter;
+                return matchesSearch && matchesStatus;
+            });
+            renderSections(filtered);
+        }
+
+        function setStatusFilter(status) {
+            currentStatusFilter = status;
+            document.getElementById('btn-stat-all').className = status === 'all' ? 'px-3 py-1.5 rounded-lg bg-primary text-white' : 'px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50';
+            document.getElementById('btn-stat-verif').className = status === 'Terverifikasi' ? 'px-3 py-1.5 rounded-lg bg-primary text-white' : 'px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50';
+            filterAllSections();
+        }
+
+        function openModal(id) {
+            const item = allData.find(d => d.id === id);
+            if (!item) return;
+
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <div class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full ${item.status === 'Terverifikasi' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                        ${item.status}
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">${item.title}</h3>
+                    <p class="text-xs text-slate-500 font-medium">Penyelenggara: ${item.organizer}</p>
+                    <hr class="border-slate-100">
+                    <div class="space-y-2 text-xs text-slate-600">
+                        <p><strong>Deskripsi:</strong> ${item.desc}</p>
+                        <p><strong>Persyaratan Utama:</strong> ${item.req}</p>
+                        <p><strong>Target Distribusi:</strong> ${item.target}</p>
+                        <p><strong>Waktu Terdistribusi:</strong> ${item.distTime}</p>
+                        <p><strong>Batas Pendaftaran:</strong> <span class="text-primary font-bold">${item.deadline}</span></p>
+                    </div>
+                    <div class="pt-4 flex gap-2">
+                        <button onclick="confirmAction('${item.title}')" class="flex-1 py-3 bg-primary hover:bg-primaryDark text-white text-xs font-bold rounded-xl transition-colors">
+                            Kunjungi Tautan Resmi
+                        </button>
+                        <button onclick="sendSingleInfoToEmail(${item.id})" class="px-4 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl transition-colors flex items-center justify-center space-x-1">
+                            <i data-lucide="mail" class="w-4 h-4 mr-1"></i> Kirim ke Email
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('info-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('info-modal').classList.add('hidden');
+        }
+
+        function confirmAction(title) {
+            closeModal();
+            const box = document.createElement('div');
+            box.className = 'fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4';
+            box.innerHTML = `
+                <div class="bg-white p-6 rounded-2xl max-w-sm w-full text-center space-y-3 shadow-xl">
+                    <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto">
+                        <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-bold text-sm text-slate-900">Mengarahkan ke Sumber Resmi</h4>
+                    <p class="text-xs text-slate-500">Anda akan diarahkan ke laman resmi penyedia ${title}.</p>
+                    <button onclick="this.closest('.fixed').remove()" class="w-full py-2 bg-slate-900 text-white rounded-xl text-xs font-bold">Tutup</button>
+                </div>
+            `;
+            document.body.appendChild(box);
+            lucide.createIcons();
+        }
+
+        function handleEmailSubscription(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('subscriber-email').value;
+            
+            const box = document.createElement('div');
+            box.className = 'fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4';
+            box.innerHTML = `
+                <div class="bg-white p-6 rounded-3xl max-w-sm w-full text-center space-y-3 shadow-2xl">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-900">Berhasil Berlangganan!</h4>
+                    <p class="text-xs text-slate-500">Informasi terbaru dari CATCH UP YUK! akan dikirim secara otomatis ke email <strong>${emailInput}</strong>.</p>
+                    <button onclick="this.closest('.fixed').remove(); document.getElementById('subscriber-email').value='';" class="w-full py-2.5 bg-primary text-white rounded-xl text-xs font-bold hover:bg-primaryDark">Mengerti</button>
+                </div>
+            `;
+            document.body.appendChild(box);
+            lucide.createIcons();
+        }
+
+        function sendSingleInfoToEmail(id) {
+            const item = allData.find(d => d.id === id);
+            if (!item) return;
+            
+            closeModal();
+            const box = document.createElement('div');
+            box.className = 'fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4';
+            box.innerHTML = `
+                <div class="bg-white p-6 rounded-3xl max-w-sm w-full text-center space-y-3 shadow-2xl">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto">
+                        <i data-lucide="mail-check" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-900">Info Terkirim ke Email!</h4>
+                    <p class="text-xs text-slate-500">Ringkasan detail <strong>"${item.title}"</strong> berhasil dikirimkan ke email terdaftar Anda.</p>
+                    <button onclick="this.closest('.fixed').remove()" class="w-full py-2.5 bg-slate-900 text-white rounded-xl text-xs font-bold">Tutup</button>
+                </div>
+            `;
+            document.body.appendChild(box);
+            lucide.createIcons();
+        }
+
+        renderSections(allData);
+    </script>
+</body>
+</html>
